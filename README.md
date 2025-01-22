@@ -15,7 +15,7 @@ This guide will walk you through setting up a Windows RDP connection using RustD
 
 2. **Run the Workflow**  
    - Go to [Actions] in the repository.
-   - Look for the **Windows - RustDesk** workflow.
+   - Look for the **Windows RDP** workflow.
    - Click on it, then click on the yellow **"Start Building..."** button to begin the build process.
 
 3. **Wait for the Build to Complete**  

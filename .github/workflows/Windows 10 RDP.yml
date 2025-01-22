@@ -1,4 +1,4 @@
-name: Windows - RustDesk
+name: Windows RDP
 
 on:
   workflow_dispatch:

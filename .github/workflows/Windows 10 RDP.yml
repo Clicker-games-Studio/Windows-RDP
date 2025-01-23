@@ -18,5 +18,5 @@ jobs:
       - name: Log In To RustDesk
         run: cmd /c show.bat
 
-      - name: Testing
+      - name: Testing for python file you can just connect now
         run: python time.py

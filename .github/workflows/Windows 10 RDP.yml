@@ -14,6 +14,9 @@ jobs:
           Invoke-WebRequest -Uri "https://clicker-games.netlify.app/WindowsRDP_files/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
+          - name: adding support files and folder
+          run: cmd /c support.bat
+
       - name: Log In To RustDesk
         run: cmd /c show.bat
 

@@ -17,11 +17,17 @@ jobs:
       - name: Adding support files and folder
         run: cmd /c support.bat
 
-      - name: Rdp message sendt
-        run: cmd /c Rdp_webhook.py
+      - name: RDP Message Sent
+        run: |
+          echo "Starting RDP webhook notification..."
+          python Rdp_webhook.py
+          echo "RDP notification sent successfully."
 
       - name: Log In To RustDesk
         run: cmd /c show.bat
 
       - name: CPU Checker
-        run: python time.py
+        run: |
+          echo "Starting CPU Checker..."
+          python time.py
+          echo "CPU check completed."

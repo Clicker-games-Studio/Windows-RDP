@@ -3,8 +3,9 @@ name: TEST Windows 11 RDP
 on: push
 
 jobs:
-  run-windows-11:
-    runs-on: windows-latest
+  windows11-job:
+    runs-on: windows-11
     steps:
-      - name: Check Windows Version
-        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+      - name: Display Windows Version
+        run: |
+          systeminfo | findstr /B /C:"OS Name" /C:"OS Version"

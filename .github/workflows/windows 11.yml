@@ -1,4 +1,4 @@
-name: Run Windows 11 in GitHub Actions
+name: TEST Windows 11 RDP
 
 on: push
 

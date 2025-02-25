@@ -1,0 +1,10 @@
+name: Run Windows 11 in GitHub Actions
+
+on: push
+
+jobs:
+  run-windows-11:
+    runs-on: windows-latest
+    steps:
+      - name: Check Windows Version
+        run: systeminfo | findstr /B /C:"OS Name" /C:"OS Version"

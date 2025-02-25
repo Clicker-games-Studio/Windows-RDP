@@ -1,0 +1,33 @@
+name: Minecraft Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  start-server:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y openjdk-17-jre-headless tmux
+
+      - name: Download Minecraft Server
+        run: |
+          mkdir -p minecraft-server
+          cd minecraft-server
+          curl -o server.jar https://piston-data.mojang.com/v1/objects/dfab8d51e0f6e1a53a0954b9b1eaae1b4044b218/server.jar
+          echo "eula=true" > eula.txt
+
+      - name: Start Minecraft Server in Tmux
+        run: |
+          cd minecraft-server
+          tmux new-session -d -s mc_server "java -Xmx2G -Xms2G -jar server.jar nogui"
+      
+      - name: Show Running Processes
+        run: ps aux | grep java
